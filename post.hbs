@@ -1,0 +1,105 @@
+{{!< default}}
+    {{> header}}
+
+    <div class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 posts">
+					{{#post}}
+                    <article class="{{post_class}}">
+                        <div class="post-header">
+                            <div class="post-title">
+                                <h2>{{{title}}}</h2>
+                            </div>
+                            <hr class="divider" />
+                            <div class="post-date">
+                                <span title="{{date format="YYYY"}}">{{date format="DD"}}</span>
+                                {{date format="MMM"}}
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                {{{content}}}
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="post-meta">
+                            by <span class="author-name">{{author.name}}</span> in:
+                            <ul class="list-inline list-post-tags">
+								{{#foreach tags}}
+									<li><a href="{{url}}">#{{name}}</a></li>
+								{{/foreach}}
+                            </ul>
+                            <div class="share-icons pull-right">
+                                Share: <i class="fa fa-share"></i>
+                                <ul class="list-inline list-share-icons">
+                                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook fb-tooltip"></i></a></li>
+                                    <li><a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter tw-tooltip"></i></a></li>
+                                    <li><a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus gp-tooltip"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            {{#if author}}
+                            <div class="col-md-3">
+                                {{#if author.image}}
+                                <div class="author-image">
+                                    <img src="{{author.image}}" alt="{{author.name}}" title="{{author.name}}" />
+                                </div>
+                                {{/if}}
+                            </div>
+                            <div class="col-md-9">
+                                <div class="author-info">
+                                    <h2>
+                                        {{author.name}}
+                                    </h2>
+                                    <p>
+                                        {{author.bio}}
+                                    </p>
+                                    <ul class="list-inline list-autthor-contact-info">
+                                        {{#if author.website}}
+                                        <li>
+                                            <a href="http://{{author.website}}">
+                                                <i class="fa fa-link"></i> {{author.website}}
+                                            </a>
+                                        </li>
+                                        {{/if}}
+                                        {{#if author.location}}
+                                        <li>
+                                            <i class="fa fa-home"></i> {{author.location}}
+                                        </li>
+                                        {{/if}}
+                                    </ul>
+                                </div>
+                            </div>
+                            {{/if}}
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="disqus_thread"></div>
+                                <script type="text/javascript">
+                                    var disqus_shortname = 'example'; // required: replace example with your forum shortname
+                                    var disqus_identifier = '{{post.id}}';
+                                 
+                                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                                    (function() {
+                                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                    })();
+                                </script>
+                                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> 
+                            </div>
+                        </div>
+                    </article>
+                    {{/post}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}

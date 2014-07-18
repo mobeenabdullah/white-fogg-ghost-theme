@@ -1,0 +1,29 @@
+{{!< default}}
+    {{> header}}
+
+    <div class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 posts">
+					{{#post}}
+                    <article class="{{post_class}}">
+                        <div class="post-header">
+                            <div class="post-title">
+                                <h2>{{{title}}}</h2>
+                            </div>
+                            <hr class="divider" />
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                {{{content}}}
+                            </p>
+                        </div>
+                    </article>
+                    {{/post}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}

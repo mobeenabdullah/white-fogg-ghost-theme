@@ -1,0 +1,73 @@
+{{!< default}}
+	{{> header}}
+
+    <div class="header-wrap" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+        <div class="overlay"></div>
+        <header class="container header">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo-text">
+                        <h1>{{@blog.title}}</h1>
+                        <h2>{{@blog.description}}</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 posts">
+                    <h2 class="tag-heading"><small>Showing posts under</small> "{{tag.name}}"</h2>
+					{{#foreach posts}}
+                    <article class="{{post_class}}">
+                        <div class="post-header">
+                            <div class="post-title">
+                                <h2><a href="{{url}}">{{{title}}}</a></h2>
+                            </div>
+                            <hr class="divider" />
+                            <div class="post-date">
+                                <span title="{{date format="YYYY"}}">{{date format="DD"}}</span>
+                                {{date format="MMM"}}
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                {{{excerpt}}}
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="post-meta">
+                            by <span class="author-name">{{author.name}}</span> in:
+                            <ul class="list-inline list-post-tags">
+								{{#foreach tags}}
+									<li><a href="{{url}}">#{{name}}</a></li>
+								{{/foreach}}
+                            </ul>
+                            <div class="share-icons pull-right">
+                                Share: <i class="fa fa-share"></i>
+                                <ul class="list-inline list-share-icons">
+                                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook fb-tooltip"></i></a></li>
+                                    <li><a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter tw-tooltip"></i></a></li>
+                                    <li><a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus gp-tooltip"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    {{/foreach}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="posts-pagination">
+	    <div class="container">
+	        <div class="row">
+	        	{{pagination}}
+	        </div>
+	    </div>
+	</div>
+
+	{{> footer}}

@@ -1,0 +1,553 @@
+/************************ WHITE FOGG STYLS CONTENTS ***********************/
+/*    1   =   White Fogg Main Body Styles                                 */
+/*    2   =   White Fogg Link Styles                                      */
+/*    3   =   White Fogg Heading Styles                                   */
+/*    4   =   White Fogg Header Styles                                    */
+/*    5   =   White Fogg Content Wrap & Post Styles                       */
+/*    6   =   White Fogg Pagination Styles                                */
+/*    7   =   White Fogg Footer Styles                                    */
+/*    8   =   White Fogg Other Styles                                     */
+/*    9   =   White Fogg Single Page Styles                               */
+/*    10  =   White Fogg Tag Page Styles                                  */
+/*    11  =   White Fogg Other Styles                                     */
+/*    13  =   White Fogg Styles in Media Queries                          */
+/************************ WHITE FOGG STYLS CONTENTS ***********************/
+
+/* White Fogg Main Body Styles
+-------------------------------------------------------------- */
+body {
+    height: 100%;
+    width: 100%;
+    background: url(../images/content-wrap-bg.png);
+    font-family: 'Droid Serif', serif;
+}
+::-moz-selection {
+    color: #FFF;
+    background: #DF4949;
+    text-shadow: none;
+}
+
+::selection {
+    background: #DF4949;
+    color: #FFF;
+    text-shadow: none;
+}
+
+/* White Fogg Link Styles
+-------------------------------------------------------------- */
+a {
+    color: #DF4949;
+    text-decoration: none;
+}
+a:hover {
+    color: #333;
+}
+
+/* White Fogg Heading Styles
+-------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    color: #DF4949;
+}
+
+/* White Fogg Header Styles
+-------------------------------------------------------------- */
+#main-navigation {
+    border-color: transparent;
+    border-top: 3px solid #DF4949;
+    background-color: #FFF;
+}
+.navbar-brand {
+    color: #DF4949 !important;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.navbar-brand small {
+    color: #FFF;
+    font-weight: normal;
+    font-size: 14px;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+}
+.navbar-brand:hover small {
+    padding-left: 15px;
+    color: #999;
+}
+.navbar-default .navbar-nav > li {
+    margin: 10px 5px;
+}
+.navbar-default .navbar-nav > li > a {
+    padding: 5px 10px;
+    border: 2px solid #FFF;
+    color: #DF4949;
+    font-family: 'Lato', sans-serif;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+    transition-duration: .7s;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    border: 2px solid #DF4949;
+    color: #DF4949;
+}
+.header-wrap {
+    height: 600px;
+    position: relative;
+    margin-top: -20px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+.header-wrap .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../images/image-overlay.png);
+}
+.logo-text {
+    max-width: 500px;
+    width: 100%;
+    margin: 200px auto;
+    padding: 10px 30px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+.logo-text h1 {
+    padding: 10px 15px;
+    display: inline-block;
+    border: 2px solid #FFF;
+    color: #FFF;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 0 0 rgba(0, 0, 0, .3);
+}
+.logo-text h2 {
+    display: inline-block;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+/* White Fogg Content Wrap & Post Styles
+-------------------------------------------------------------- */
+.content-wrap {
+    padding: 70px 0;
+    background: url(../images/content-wrap-bg.png);
+}
+.featured:before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-left: 100px solid transparent;
+    border-top: 100px solid #DF4949;
+}
+
+.featured:after {
+    content: "";
+    position: absolute;
+    right: 13px;
+    top: 12px;
+    color: #fff;
+    font-family: glyphicons halflings;
+    font-size: 30px;
+}
+.post {
+    margin-bottom: 50px;
+    padding: 50px 70px;
+    position: relative;
+    background-color: #FFF;
+}
+.post:last-child {
+    margin-bottom: 0;
+}
+.post-title h2 {
+    margin: 0 0 20px 0;
+    font-size: 4em;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+.post-title h2 a {
+    color: #DF4949;
+    text-decoration: none;
+}
+.divider {
+    width: 80%;
+    margin: 40px auto;
+    position: relative;
+}
+.divider:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -10px;
+    left: 49%;
+    background: #ddd;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -moz-box-shadow: 10px -10px 0 #f0f0f0, 
+                -10px 10px 0 #f0f0f0;
+    box-shadow: 10px -10px 0 #f0f0f0, 
+                -10px 10px 0 #f0f0f0;
+}
+.post-date {
+    width: 70px;
+    height: 70px;
+    padding-top: 15px;
+    position: absolute;
+    top: -35px;
+    left: -30px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    background-color: #DF4949;
+    color: #FFF;
+    line-height: 20px;
+    text-align: center;    
+}
+.post-date span {
+    display: block;
+    font-size: 26px;
+    font-weight: bold;
+}
+.post-content {
+    color: #50585D;
+    font-size: 24px;
+    letter-spacing: -1px;
+}
+.post-content input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #999;
+    outline: none;
+}
+.post-content img {
+    width: 100%;
+    margin: 20px 0 30px 0;
+    display: block;
+}
+.post-meta {
+    color: #999;
+    font-family: 'Lato', sans-serif;
+}
+.post-meta span.author-name {
+    color: #DF4949;
+    font-weight: bold;
+}
+.post-meta .list-post-tags {
+    display: inline;
+}
+.post-meta .list-post-tags li {
+    padding: 0 0 0 5px;
+}
+.post-meta .list-post-tags li:after {
+    content:",";
+}
+.post-meta .list-post-tags li:last-child:after {
+    content:"";
+}
+.post-meta .list-post-tags li a {
+    color: #999;
+    font-weight: bold;
+    text-decoration: none;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+}
+.post-meta .list-post-tags li a:hover {
+    color: #DF4949;
+}
+.post-meta .list-share-icons {
+    display: inline;
+}
+.post-meta .list-share-icons li {
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+    background-color: #DF4949;
+    line-height: 25px;
+    text-align: center;
+}
+.post-meta .share-icons {
+    color: #DF4949;
+}
+.post-meta .list-share-icons {
+    padding-left: 10px;
+}
+.post-meta .list-share-icons li a {
+    color: #FFF;
+    text-decoration: none;
+}
+.post-meta .tooltip {
+    margin-top: -10px;
+}
+
+/* White Fogg Pagination Styles
+-------------------------------------------------------------- */
+.posts-pagination {
+    background-color: #DF4949;
+}
+.newer-posts {
+    text-align: center;
+}
+.newer-posts {
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+}
+.newer-posts a {
+    color: #FFF;
+    text-decoration: none;
+}
+.newer-posts:hover {
+    padding-right: 20px;
+    background-color: rgba(255, 255, 255, .4);    
+}
+.newer-posts span {
+    padding-left: 10px;
+}
+.newer-posts i {
+    font-size: 16px;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+}
+.newer-posts:hover i {
+    -webkit-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+}
+
+.page-num {
+    padding: 20px 0;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, .2);
+    color: #FFF;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+}
+
+.older-posts {
+    text-align: center;
+}
+.older-posts {
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+}
+.older-posts a {
+    color: #FFF;
+    text-decoration: none;
+}
+.older-posts:hover {
+    padding-left: 20px;
+    background-color: rgba(255, 255, 255, .4);
+}
+.older-posts span {
+    padding-right: 10px;
+}
+.older-posts i {
+    font-size: 16px;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+}
+.older-posts:hover i {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/* White Fogg Footer Styles
+-------------------------------------------------------------- */
+footer {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+footer p {
+    margin: 10px 0 10px 0;
+    color: #333;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+}
+footer p a {
+    color: #DF4949;
+    text-decoration: none !important;
+}
+footer .list-footer-social {
+    margin: 1px 0;
+}
+footer .list-footer-social li {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #DF4949;
+    border-radius: 50%;
+    line-height: 37px;
+    text-align: center;
+    -webkit-transition-duration: .3;
+    -o-transition-duration: .3;
+    transition-duration: .3;
+}
+footer .list-footer-social li:hover {
+    background-color: #DF4949;
+}
+footer .list-footer-social li a {
+    color: #DF4949;
+    font-size: 21px;
+    text-decoration: none;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+}
+footer .list-footer-social li:hover a {
+    color: #FFF;
+}
+
+/* White Fogg Other Styles
+-------------------------------------------------------------- */
+.go-top {    
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display:none;
+    cursor: pointer;
+    border: 2px solid #DF4949;
+    border-radius: 5px;
+    background-color: #DF4949;
+    color: #FFF;
+    line-height: 40px;
+    z-index: 999;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+}
+.go-top:hover {
+    background-color: transparent;
+    color: #DF4949;
+}
+.object {
+    visibility: hidden;
+}
+.animated {
+    visibility: visible;
+}
+
+/* White Fogg Single Page Styles
+-------------------------------------------------------------- */
+.author-image {
+    border-right: 1px solid #ddd;
+    text-align: center;
+}
+.author-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #999;
+    background-color: #999;
+}
+.author-info h2 {
+    margin: 0px 0 10px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Lato', sans-serif;
+}
+.author-info p {
+    font-family: 'Lato', sans-serif;
+}
+.list-autthor-contact-info li {
+    color: #DF4949;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+.list-autthor-contact-info li a {
+    color: #DF4949;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* White Fogg Tag Page Styles
+-------------------------------------------------------------- */
+h2.tag-heading {
+    margin: 0 0 80px 0;
+    padding: 20px;
+    background-color: #FFF;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: #DF4949;
+}
+h2.tag-heading small {
+    color: #333;
+    font-size: 26px;
+}
+
+/* White Fogg Media Queries
+-------------------------------------------------------------- */
+@media (max-width: 320px) {
+  .post-title h2 {
+    font-size: 2em;
+    word-wrap: break-word;
+  }
+  .post-content {
+    font-size: 18px;
+    word-wrap: break-word;
+  }
+  .navbar-brand small {
+    display: none;
+  }
+}
+@media (min-width: 320px) {
+  .container {
+    width: 300px;
+  }
+  .post-title h2 {
+    font-size: 3em;
+    word-wrap: break-word;
+  }
+  .navbar-brand small {
+    display: none;
+  }
+}
+@media (min-width: 480px) {
+  .container {
+    width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 600px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 800px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
